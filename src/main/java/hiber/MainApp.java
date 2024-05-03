@@ -49,8 +49,6 @@ public class MainApp {
         }
 
         User user4 = userService.getUser(car3);
-        System.out.println(user4.getFirstName());
-        System.out.println(user4.getLastName());
-        System.out.println(user4.getEmail());
+        System.out.println(user4.toString());
     }
 }
