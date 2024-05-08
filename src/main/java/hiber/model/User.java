@@ -26,6 +26,7 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
     private Car car;
 
