@@ -10,7 +10,7 @@ public interface UserDao {
 
     List<User> listUsers();
 
-    void saveCar(Car car);
+    void saveCar(User user);
 
-    User getUser(Car car);
+    User getUserByCar(Car car);
 }

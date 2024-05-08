@@ -28,14 +28,16 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void saveCar(Car car) {
-        sessionFactory.getCurrentSession().save(car);
+    public void saveCar(User user) {
+        sessionFactory.getCurrentSession().save(user.getCar());
     }
 
     @Override
-    public User getUser(Car car) {
+    @SuppressWarnings("unchecked")
+    public User getUserByCar(Car car) {
+        String SQL = "from User u join fetch u.car c where c.model=:m and c.series=:s";
         TypedQuery<User> query = sessionFactory.getCurrentSession()
-                .createQuery("from User u where u.car.model=:m and u.car.series=:s", User.class)
+                .createQuery(SQL, User.class)
                 .setParameter("m", car.getModel())
                 .setParameter("s", car.getSeries());
 

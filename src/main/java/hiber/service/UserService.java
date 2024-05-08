@@ -8,9 +8,9 @@ import java.util.List;
 public interface UserService {
     void add(User user);
 
-    void saveCar(User user, Car car);
+    void saveCar(User user);
 
     List<User> listUsers();
 
-    User getUser(Car car);
+    User getUserByCar(Car car);
 }

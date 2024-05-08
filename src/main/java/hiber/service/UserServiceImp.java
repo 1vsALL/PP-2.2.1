@@ -23,9 +23,8 @@ public class UserServiceImp implements UserService {
 
     @Transactional
     @Override
-    public void saveCar(User user, Car car) {
-        userDao.saveCar(car);
-        userDao.add(user);
+    public void saveCar(User user) {
+        userDao.saveCar(user);
     }
 
     @Transactional(readOnly = true)
@@ -34,11 +33,9 @@ public class UserServiceImp implements UserService {
         return userDao.listUsers();
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
-    public User getUser(Car car) {
-        return userDao.getUser(car);
+    public User getUserByCar(Car car) {
+        return userDao.getUserByCar(car);
     }
-
-
 }

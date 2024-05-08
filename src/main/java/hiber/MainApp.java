@@ -24,19 +24,19 @@ public class MainApp {
         Car car = new Car("Peugeot", 2);
         user1.setCar(car);
         car.setUser(user1);
-        userService.saveCar(user1, car);
+        userService.saveCar(user1);
 
         User user2 = new User("Kirill", "Naum", "email@yandex.ru");
         Car car2 = new Car("Mercedes", 1);
         user2.setCar(car2);
         car2.setUser(user2);
-        userService.saveCar(user2, car2);
+        userService.saveCar(user2);
 
         User user3 = new User("Igor", "Svet", "email@mail.ru");
         Car car3 = new Car("BMW", 3);
         user3.setCar(car3);
         car3.setUser(user3);
-        userService.saveCar(user3, car3);
+        userService.saveCar(user3);
 
 
         List<User> users = userService.listUsers();
@@ -48,7 +48,7 @@ public class MainApp {
             System.out.println();
         }
 
-        User user4 = userService.getUser(car3);
+        User user4 = userService.getUserByCar(car3);
         System.out.println(user4.toString());
     }
 }
