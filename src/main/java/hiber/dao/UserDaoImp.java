@@ -40,8 +40,7 @@ public class UserDaoImp implements UserDao {
                 .createQuery(SQL, User.class)
                 .setParameter("m", car.getModel())
                 .setParameter("s", car.getSeries());
-
-        return query.getSingleResult();
+        return query.getResultList().stream().findAny().orElse(null);
     }
 
 }

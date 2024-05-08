@@ -38,7 +38,6 @@ public class MainApp {
         car3.setUser(user3);
         userService.saveCar(user3);
 
-
         List<User> users = userService.listUsers();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
